@@ -4,13 +4,15 @@ public class Loop {
     public static void main(String[] args) {
         Scanner reading = new Scanner(System.in);
 
-        Double ratingMedia = (double) 0;
-        Double grade = (double) 0;
+        Double ratingMedia = 0.00;
+        Double grade =  0.00;
 
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("Diga sua avaliação para o filme: ");
-            grade = reading.nextDouble();
+            do {
+                System.out.println("Diga sua " + (i + 1) + "ª avaliação para o filme: ");
+                grade = reading.nextDouble();
+            } while (grade < 0.00 || grade > 10.00);
             ratingMedia += grade;
         }
 
